@@ -1,8 +1,14 @@
 import "./globals.css";
+import { Outfit } from "next/font/google";
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata = {
   title: "LabourChowk",
-  description: "Kaam wale aur thekedar yahin milte hain",
+  description: "Ghar ka kaam hai? Aaj available labour dhundo aur contact karo",
 };
 
 export default function RootLayout({
@@ -11,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="hi">
+    <html lang="hi" className={outfit.className}>
       <body>{children}</body>
     </html>
   );
